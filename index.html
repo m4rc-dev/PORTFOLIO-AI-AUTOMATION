@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marcelo Cagara – AI Automation Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#2536e8;--yellow:#ffd23f;--mint:#7be0b0;--ink:#0d0f1a;--bg:#f2f4f7;--fg:#0d0f1a;--mute:#4e5468;--line:#cfd4e0;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d0f1a;--fg:#f2f4f7;--mute:#a0a8c0;--line:#2a2f48;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0d0f1a;--fg:#f2f4f7;--mute:#a0a8c0;--line:#2a2f48;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.6 Archivo,system-ui,sans-serif}
+h1,h2,h3{margin:0;font-stretch:118%;font-weight:800;line-height:1.02;letter-spacing:-.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.top{background:var(--blue);color:#fff;padding-bottom:72px}
+nav{display:flex;justify-content:space-between;padding:22px 0;font-weight:600}
+nav div{display:flex;gap:24px}
+nav a{text-decoration:none;opacity:.85}nav a:hover{opacity:1;text-decoration:underline}
+.hero{display:grid;grid-template-columns:1fr;gap:44px;padding-top:28px}
+@media(min-width:900px){.hero{grid-template-columns:1fr 1fr;align-items:start;gap:56px}}
+h1{font-size:clamp(40px,6.4vw,76px)}
+.hero p{max-width:28em;margin:22px 0 0;font-size:20px;opacity:.92}
+.hero .who{margin-top:34px;padding-top:16px;border-top:3px solid var(--yellow);display:grid;gap:2px;width:max-content;max-width:100%;opacity:1}
+.hero .who strong{font-size:24px;font-stretch:112%;font-weight:800;line-height:1.2}
+.hero .who span{font-size:17px;opacity:.85}
+.demo{background:#fff;color:var(--ink);border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink);padding:20px}
+.demo h2{font-size:20px;margin-bottom:12px}
+.picks{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.picks button{font:inherit;font-size:15px;text-align:left;padding:9px 12px;background:#fff;border:2px solid var(--ink);cursor:pointer;color:var(--ink)}
+.picks button:hover{background:#eef0fb}
+.picks button[aria-pressed="true"]{background:var(--yellow)}
+ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+ol.steps li{border-left:6px solid var(--line);padding:6px 0 6px 12px;opacity:.35;transition:opacity .25s,border-color .25s}
+ol.steps li.on{opacity:1;border-left-color:var(--blue)}
+ol.steps li.ai.on{border-left-color:#e08a00}
+ol.steps b{display:block;font-size:16px}
+ol.steps code{font:400 13.5px/1.45 "JetBrains Mono",monospace;display:block;min-height:1.45em;color:#2b3150;word-break:break-word}
+.note{font-size:13.5px;color:#5a6080;margin:14px 0 0}
+section{padding:72px 0}
+h2.big{font-size:clamp(30px,4.6vw,50px);margin-bottom:14px}
+.sub{color:var(--mute);max-width:36em;margin:0 0 34px}
+.stage{background:var(--ink);height:440px;position:relative;overflow:hidden}
+.stage canvas{width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y}
+.stage span{position:absolute;left:16px;bottom:12px;font-size:14px;color:#a0a8c0;pointer-events:none}
+.rows{border-top:2px solid var(--fg)}
+.row{display:grid;grid-template-columns:1fr;gap:4px;padding:22px 8px;border-bottom:1px solid var(--line);transition:background .15s}
+.row:hover{background:color-mix(in srgb,var(--yellow) 30%,transparent)}
+@media(min-width:800px){.row{grid-template-columns:230px 1fr 210px;gap:28px}}
+.row h3{font-size:22px}
+.row p{margin:0}
+.row small{color:var(--mute);font-size:15px}
+.cols{columns:2 240px;column-gap:40px;max-width:760px;margin:0;padding:0;list-style:none;font-size:20px;font-weight:500}
+.cols li{padding:5px 0;break-inside:avoid}
+.contact{background:var(--yellow);color:var(--ink);padding:72px 0 88px}
+.contact h2{font-size:clamp(34px,6vw,70px);max-width:12em}
+.contact a.mail{display:inline-block;margin-top:28px;font-size:clamp(20px,3.2vw,32px);font-weight:700;font-stretch:112%}
+.contact p{margin:22px 0 0;font-weight:500}
+html{-webkit-text-size-adjust:100%}
+body{overflow-x:clip}
+h1,h2,h3{overflow-wrap:break-word}
+nav a{padding:6px 0}
+@media(min-width:800px) and (max-width:899px){.row{grid-template-columns:1fr;gap:4px}}
+@media(min-width:1500px){.wrap{max-width:1240px}}
+@media(max-width:560px){
+.wrap{padding:0 16px}
+nav{flex-wrap:wrap;gap:6px 16px;font-size:15px}
+nav div{gap:16px}
+.top{padding-bottom:48px}
+.hero{gap:36px;padding-top:16px}
+h1{font-size:clamp(28px,9vw,44px)}
+.hero p{font-size:18px}
+.hero .who strong{font-size:21px}
+.demo{padding:16px;box-shadow:5px 5px 0 var(--ink)}
+.picks button{font-size:14px}
+section{padding:52px 0}
+h2.big{font-size:26px}
+.stage{height:340px}
+.row{padding:18px 4px}
+.row h3{font-size:20px}
+.cols{columns:1;font-size:18px}
+.contact{padding:52px 0 64px}
+.contact h2{font-size:28px}
+.contact a.mail{font-size:17px;overflow-wrap:anywhere}
+}
+@media(max-width:360px){nav{font-size:14px}.btn{padding:10px 14px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+<nav><span>Marcelo Cagara</span><div><a href="#build">How it’s wired</a><a href="#work">Work</a><a href="#contact">Contact</a></div></nav>
+<header class="hero">
+<div>
+<h1>I make the boring parts of your business run themselves.</h1>
+<p>I build AI automations that handle routine tasks on their own and alert you when something needs a human decision. I work with workflow tools and LLM APIs.</p>
+<p class="who"><strong>Marcelo Cagara</strong><span>AI Automation Developer</span><span>Cebu City, Philippines</span></p>
+</div>
+<div class="demo" id="demo">
+<h2>Run my email organizer</h2>
+<div class="picks" role="group" aria-label="Pick a sample email">
+<button type="button" data-i="0">“Weekend sale: 40% off everything”</button>
+<button type="button" data-i="1">“Can we move tomorrow’s call to 3pm?”</button>
+<button type="button" data-i="2">“Invoice #2041 attached, due Friday”</button>
+</div>
+<ol class="steps" aria-live="polite">
+<li><b>1. Email arrives</b><code></code></li>
+<li class="ai"><b>2. AI sorts it</b><code></code></li>
+<li><b>3. Flow files it</b><code></code></li>
+<li><b>4. You get notified</b><code></code></li>
+</ol>
+<p class="note">Sample run with made-up emails. No real inbox is used.</p>
+</div>
+</header>
+</div></div>
+
+<section id="build"><div class="wrap">
+<h2 class="big">How a flow is wired</h2>
+<p class="sub">This is my Gmail organizer drawn as blocks. Every automation I build follows the same chain: a trigger, an AI step that decides, and a result where your team already works. Move over it to turn it, and hover a block to pull it forward.</p>
+<div class="stage"><canvas id="nodes3d" role="img" aria-label="3D diagram of the email organizer: new email, AI sort, filter, then notify or label and archive"></canvas><span>Yellow dots are data moving between steps.</span></div>
+</div></section>
+
+<section id="work" style="padding-top:0"><div class="wrap">
+<h2 class="big">Automations I’ve built</h2>
+<p class="sub">Starting with my lead qualifier and the email flow above, plus my social media scheduler. Walkthroughs are available on request.</p>
+<div class="rows">
+<div class="row"><h3>AI lead qualifier + CRM updater</h3><p>An n8n flow that takes inbound leads and scores them 1 to 10 with an LLM (Groq). Each contact is saved to HubSpot with the score, an AI summary and a suggested next step. Hot leads (7 and up) trigger an instant Telegram alert with a drafted reply. Retries and a manual-review fallback mean no lead is lost if the AI service is down or rate-limited.</p><small>n8n, Groq, HubSpot, Telegram, Webhooks, JavaScript</small></div>
+<div class="row"><h3>Gmail AI organizer</h3><p>Reads every new email and uses AI to give it a category, a priority and a one-line summary. It labels the email, archives newsletters and promotions, and sends a notification only for the important ones.</p><small>n8n, Gmail, LLM API</small></div>
+<div class="row"><h3>AI social media scheduler</h3><p>Pulls content ideas from Google Sheets, uses AI to write tailored posts, and schedules them across the week. It publishes to LinkedIn, with Instagram and other platforms planned next.</p><small>Google Sheets, AI, LinkedIn</small></div>
+</div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<h2 class="big">Examples of what I can automate</h2>
+<p class="sub">A few common tasks that follow the same pattern as my projects: a trigger, an AI step, and a result where your team already works. These are examples, not a full list.</p>
+<div class="rows">
+<div class="row"><h3>Lead and inbox replies</h3><p>Reads incoming emails and chats, drafts a reply and logs the lead. A person approves before anything is sent.</p><small>LLM API</small></div>
+<div class="row"><h3>Lead scoring and CRM updates</h3><p>Scores every new lead with AI, saves it to your CRM with a summary and a suggested next step, and alerts your sales team right away when a lead is hot.</p><small>LLM API, HubSpot</small></div>
+<div class="row"><h3>Invoice and document intake</h3><p>Pulls the fields out of PDFs and forms and writes them to your sheet or database.</p><small>LLM API</small></div>
+<div class="row"><h3>Chatbots that know your files</h3><p>Answers questions from your own documents with RAG, and says so when it doesn’t know.</p><small>RAG, LangChain</small></div>
+<div class="row"><h3>Scheduled reports</h3><p>Collects your numbers on a schedule and sends a short written summary.</p><small>LLM API</small></div>
+</div>
+<p class="sub" style="margin:28px 0 0">Have a different task? Tell me what it is and I’ll tell you how I’d automate it.</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<h2 class="big">What I work with</h2>
+<p class="sub">Automation tools on top, web engineering underneath.</p>
+<ul class="cols"><li>n8n</li><li>Make.com and Zapier (learning)</li><li>LLM APIs (Groq, Gemini, OpenAI, Claude)</li><li>Python</li><li>HubSpot CRM</li><li>Telegram Bot API and webhooks</li><li>RAG</li><li>LangChain</li><li>Prompt engineering</li><li>Claude-assisted development</li><li>TypeScript</li><li>React and Next.js</li><li>Node.js and FastAPI</li><li>Supabase and PostgreSQL</li></ul>
+<p class="sub" style="margin-top:34px">BS Information Technology, University of Cebu, 2026. Certified in AI for App Building (Google), Responsible AI (Google Cloud) and Azure AI Fundamentals (TESDA).</p>
+</div></section>
+
+<footer class="contact" id="contact"><div class="wrap">
+<h2>Got a task you’re tired of doing by hand?</h2>
+<a class="mail" href="mailto:marcelo.devxyz@gmail.com">marcelo.devxyz@gmail.com</a>
+<p><a href="https://www.linkedin.com/in/marcelo-cagara-7813a2430/">LinkedIn</a> and <a href="https://github.com/m4rc-dev">GitHub</a></p>
+</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* live demo */
+var runs=[
+["Newsletter: Weekend sale, 40% off everything","Category: Promotion. Priority: low. Summary: store sale ends Sunday.","Labeled Promotions and archived. The inbox stays clean.","No notification. It is not important."],
+["Client: Can we move tomorrow’s call to 3pm?","Category: Work. Priority: high. Summary: client asks to move tomorrow’s call to 3pm.","Labeled Work and kept in the inbox.","Notification sent right away because it is important."],
+["Invoice #2041 attached, due Friday","Category: Finance. Priority: medium. Summary: invoice due Friday.","Labeled Finance and kept in the inbox.","Notification sent so the due date is not missed."]];
+var lis=document.querySelectorAll('ol.steps li'),btns=document.querySelectorAll('.picks button'),timers=[];
+function run(i){
+ timers.forEach(clearTimeout);timers=[];
+ btns.forEach(function(b,k){b.setAttribute('aria-pressed',k===i)});
+ lis.forEach(function(l,k){l.classList.remove('on');l.querySelector('code').textContent=''});
+ lis.forEach(function(l,k){
+  var go=function(){l.classList.add('on');l.querySelector('code').textContent=runs[i][k]};
+  if(reduce)go();else timers.push(setTimeout(go,k*850));
+ });
+}
+btns.forEach(function(b){b.addEventListener('click',function(){run(+b.dataset.i)})});
+run(0);
+
+/* 3D nodes */
+try{
+var el=document.getElementById('nodes3d');
+var R=new THREE.WebGLRenderer({canvas:el,alpha:true,antialias:true});R.setPixelRatio(Math.min(devicePixelRatio,2));
+var S=new THREE.Scene(),C=new THREE.PerspectiveCamera(45,2,.1,100);
+S.add(new THREE.AmbientLight(0xffffff,.85));var dl=new THREE.DirectionalLight(0xffffff,.7);dl.position.set(3,5,8);S.add(dl);
+var W=new THREE.Group();S.add(W);
+var defs=[['Trigger','New email',0xffffff,-4.6,0],['AI step','Sort + summarize',0xffd23f,-1.6,0],['Filter','Important or not',0x2536e8,1.4,0],['Notify','Important only',0x7be0b0,4.4,1.3],['File it','Label, archive',0x7be0b0,4.4,-1.3]];
+function label(t,s,bg){var c=document.createElement('canvas');c.width=512;c.height=300;var x=c.getContext('2d');
+ var dark=(bg===0x2536e8);x.fillStyle='#'+('000000'+bg.toString(16)).slice(-6);x.fillRect(0,0,512,300);
+ x.fillStyle=dark?'#fff':'#0d0f1a';x.font='800 58px Arial,sans-serif';x.fillText(t,36,140);x.font='34px Arial,sans-serif';x.globalAlpha=.75;x.fillText(s,36,200);
+ return new THREE.CanvasTexture(c)}
+var nodes=[];
+defs.forEach(function(d){
+ var g=new THREE.Group();g.position.set(d[3],d[4],0);
+ var box=new THREE.Mesh(new THREE.BoxGeometry(2.6,1.5,.6),new THREE.MeshLambertMaterial({color:d[2]}));
+ var face=new THREE.Mesh(new THREE.PlaneGeometry(2.6,1.5),new THREE.MeshBasicMaterial({map:label(d[0],d[1],d[2])}));face.position.z=.31;
+ g.add(box,face);g.userData={s:1};box.userData.g=g;face.userData.g=g;W.add(g);nodes.push(g);
+});
+var packets=[];
+[[0,1],[1,2],[2,3],[2,4]].forEach(function(l,k){
+ var a=nodes[l[0]].position,b=nodes[l[1]].position;
+ var p0=new THREE.Vector3(a.x+1.3,a.y,0),p1=new THREE.Vector3(b.x-1.3,b.y,0),m=new THREE.Vector3((p0.x+p1.x)/2,(p0.y+p1.y)/2,.8);
+ var cu=new THREE.QuadraticBezierCurve3(p0,m,p1);
+ W.add(new THREE.Mesh(new THREE.TubeGeometry(cu,24,.035,6,false),new THREE.MeshBasicMaterial({color:0x6a76ff})));
+ for(var n=0;n<2;n++){var s=new THREE.Mesh(new THREE.SphereGeometry(.1,12,12),new THREE.MeshBasicMaterial({color:0xffd23f}));W.add(s);packets.push({m:s,c:cu,o:n/2+k*.17})}
+});
+var mx=0,my=0,ray=new THREE.Raycaster(),ptr=new THREE.Vector2(9,9);
+el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect();mx=(e.clientX-r.left)/r.width-.5;my=(e.clientY-r.top)/r.height-.5;ptr.set(mx*2,-my*2)});
+el.addEventListener('pointerleave',function(){mx=my=0;ptr.set(9,9)});
+function size(){var w=el.clientWidth,h=el.clientHeight;R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix();C.position.set(0,0,Math.max(10,7.4/(Math.tan(22.5*Math.PI/180)*C.aspect)))}
+addEventListener('resize',size);size();
+function draw(t){
+ W.rotation.y+=((mx*.7+Math.sin(t*.0004)*.1)-W.rotation.y)*.06;W.rotation.x+=((my*.4)-W.rotation.x)*.06;
+ ray.setFromCamera(ptr,C);
+ var hit=ray.intersectObjects(W.children,true).map(function(h){return h.object.userData.g}).filter(Boolean)[0];
+ nodes.forEach(function(n,i){var on=n===hit;n.userData.s+=((on?1.12:1)-n.userData.s)*.15;n.scale.setScalar(n.userData.s);n.position.z=on?.6:Math.sin(t*.001+i)*.1});
+ packets.forEach(function(p){p.m.position.copy(p.c.getPoint((t*.0003+p.o)%1))});
+ R.render(S,C);
+}
+if(reduce){draw(0)}else{(function loop(t){draw(t);requestAnimationFrame(loop)})(0)}
+}catch(e){var s=document.getElementById('nodes3d');s&&(s.parentNode.style.display='none')}
+})();
+</script>
+</body>
+</html>
